@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +17,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: isHomePage ? '#inicio' : '/#inicio', label: 'Início' },
-    { href: isHomePage ? '#servicos' : '/#servicos', label: 'Serviços' },
-    { href: isHomePage ? '#sobre' : '/#sobre', label: 'Sobre' },
-    { href: isHomePage ? '#tecnologias' : '/#tecnologias', label: 'Tecnologias' },
-    { href: isHomePage ? '#contato' : '/#contato', label: 'Contato' },
+    { href: '#inicio', label: 'Início' },
+    { href: '#servicos', label: 'Serviços' },
+    { href: '#sobre', label: 'Sobre' },
+    { href: '#tecnologias', label: 'Tecnologias' },
+    { href: '#contato', label: 'Contato' },
   ];
 
   const handleLinkClick = () => {
@@ -34,9 +31,9 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-container">
-        <Link to="/" className="header-logo">
+        <a href="#inicio" className="header-logo">
           <Logo />
-        </Link>
+        </a>
 
         <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
           <ul className="nav-list">
@@ -51,11 +48,11 @@ const Header = () => {
                 </a>
               </li>
             ))}
-            </ul>
-            <a href={isHomePage ? '#contato' : '/#contato'} className="nav-cta" onClick={handleLinkClick}>
-              Fale Conosco
-            </a>
-          </nav>
+          </ul>
+          <a href="#contato" className="nav-cta" onClick={handleLinkClick}>
+            Fale Conosco
+          </a>
+        </nav>
 
         <button
           className="mobile-menu-toggle"
