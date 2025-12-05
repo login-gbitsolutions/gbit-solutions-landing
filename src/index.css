@@ -1,0 +1,169 @@
+:root {
+  /* Cores principais */
+  --purple-primary: #7A63FF;
+  --purple-light: #9580FF;
+  --purple-dark: #5A43DF;
+  --cyan: #74E0EF;
+  --cyan-light: #C1F7FF;
+  --magenta: #EF75FD;
+  
+  /* Tons de cinza */
+  --white: #FFFFFF;
+  --gray-100: #E7E7E7;
+  --gray-200: #B4B4B4;
+  --gray-300: #969696;
+  --gray-400: #555555;
+  --gray-500: #2A2A2A;
+  --background: #1E1E1E;
+  --background-light: #252525;
+  --background-card: #262626;
+  
+  /* Tipografia */
+  --font-primary: 'Tenor Sans', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  
+  /* Espaçamentos */
+  --section-padding: 100px 0;
+  --container-max-width: 1200px;
+  
+  /* Transições */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--background);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-secondary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Animações globais */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-light);
+}
+
+/* Seleção de texto */
+::selection {
+  background: var(--purple-primary);
+  color: var(--white);
+}
