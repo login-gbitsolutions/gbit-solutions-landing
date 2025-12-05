@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin, Instagram, Github } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import Logo from './Logo';
 import './Footer.css';
 
@@ -21,12 +21,6 @@ const Footer = () => {
     { label: 'Serviços Personalizados', href: '#servicos' },
   ];
 
-  const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Github, href: 'https://github.com/login-gbitsolutions', label: 'GitHub' },
-  ];
-
   return (
     <footer className="footer">
       <div className="container">
@@ -37,20 +31,6 @@ const Footer = () => {
               Soluções completas em TI para impulsionar o crescimento do seu negócio. 
               Especialistas em AWS, desenvolvimento e monitoramento.
             </p>
-            <div className="footer-social">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="social-link"
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div className="footer-links">
@@ -92,9 +72,25 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} GBIT Solutions. Todos os direitos reservados.</p>
-          <p className="footer-credits">
-            Feito com 💜 por GBIT Solutions
-          </p>
+          <div className="footer-credits">
+            <span>Desenvolvido por</span>
+            <a href="#inicio" className="credits-logo">
+              <svg
+                viewBox="0 0 160 160"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="mini-logo"
+              >
+                <circle cx="80" cy="80" r="45" stroke="#7A63FF" strokeWidth="4" fill="none"/>
+                <path d="M 80 20 A 60 60 0 0 1 130 50" stroke="#7A63FF" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M 140 80 A 60 60 0 0 1 120 130" stroke="#7A63FF" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M 100 145 A 60 60 0 0 1 40 135" stroke="#7A63FF" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M 25 110 A 60 60 0 0 1 25 50" stroke="#7A63FF" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M 40 30 A 60 60 0 0 1 70 20" stroke="#7A63FF" strokeWidth="2" fill="none" strokeLinecap="round"/>
+              </svg>
+              <span>GBIT Solutions</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
