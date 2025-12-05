@@ -119,7 +119,7 @@
 
 .service-features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -151,6 +151,17 @@
 
 .service-cta:hover {
   gap: 12px;
+}
+
+.service-extra {
+  font-size: 14px;
+  color: var(--cyan);
+  font-style: italic;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: rgba(116, 224, 239, 0.1);
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 8px 8px 0;
 }
 
 /* Monitoring Section */
@@ -214,6 +225,90 @@
   line-height: 1.6;
 }
 
+/* Monitoring Services */
+.monitoring-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.service-card.monitoring {
+  padding: 40px;
+  background: var(--background);
+}
+
+.service-icon-medium {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(122, 99, 255, 0.3), rgba(116, 224, 239, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple-primary);
+  margin-bottom: 24px;
+}
+
+.service-title-medium {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--white);
+  font-family: var(--font-primary);
+}
+
+.service-description-medium {
+  font-size: 15px;
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+/* Additional Services */
+.additional-section {
+  background: var(--background-light);
+  border-radius: 32px;
+  padding: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 60px;
+}
+
+/* Custom Services CTA */
+.custom-services-cta {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 60px;
+  padding: 48px;
+  background: linear-gradient(135deg, rgba(122, 99, 255, 0.15), rgba(116, 224, 239, 0.1));
+  border-radius: 24px;
+  border: 1px solid rgba(122, 99, 255, 0.3);
+}
+
+.custom-services-cta .cta-icon {
+  color: var(--purple-primary);
+  min-width: 32px;
+}
+
+.custom-services-cta .cta-content {
+  flex: 1;
+}
+
+.custom-services-cta .cta-content h3 {
+  font-size: 24px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.custom-services-cta .cta-content p {
+  font-size: 15px;
+  color: var(--gray-300);
+  line-height: 1.6;
+}
+
+.custom-services-cta .btn {
+  white-space: nowrap;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .main-services {
@@ -224,8 +319,25 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .monitoring-section {
+  .monitoring-services {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-section,
+  .additional-section {
     padding: 40px;
+  }
+
+  .custom-services-cta {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-features {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -238,7 +350,12 @@
     grid-template-columns: 1fr;
   }
 
-  .monitoring-section {
+  .monitoring-section,
+  .additional-section {
     padding: 32px 20px;
+  }
+
+  .custom-services-cta {
+    padding: 32px 24px;
   }
 }
